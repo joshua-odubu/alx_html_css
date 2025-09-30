@@ -15,8 +15,8 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     color: white;
-    padding: 20px;
-    margin: 20px;
+    padding: 0;
+    margin: 0;
 }
 
 /* Reset some default spacing */
@@ -164,3 +164,42 @@ header nav ul li a:hover {
   color: #a259ff;            /* purple highlight */
 }
 
+.testimonial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;                     /* space between image and text */
+  padding: 80px 20px;             /* top/bottom spacing */
+  color: white;
+  background-color: #a259ff;
+  background-size: cover;
+}
+
+.testimonial-image img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;               /* make image circular */
+  object-fit: cover;                /* crop neatly */
+  margin-right: 40px;               /* gap to text */
+}
+
+.testimonial-text blockquote {
+  max-width: 800px;
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.6;
+  margin: 0 0 15px;
+}
+
+.testimonial-text h3 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.testimonial-text p {
+  margin: 0;
+  font-style: italic;
+  font-size: 0.9rem;
+  opacity: 0.85;                    /* subtle contrast */
+}
