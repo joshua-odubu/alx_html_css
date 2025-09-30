@@ -1,4 +1,7 @@
 /* Reset the basics */
+@import url(https://www.fontsquirrel.com/fonts/source-sans-pro);
+@import url(https://www.fontsquirrel.com/fonts/Spin-Cycle-OT);
+
 
 * {
     margin: 0;
@@ -6,7 +9,158 @@
     box-sizing: border-box;
 }
 
-/* Body */
 body {
-    font-family: ;
+    font-family: 'source-sans-pro', 'Spin-Cycle-OT';
+    background-image: url(images/Object.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 20px;
+    margin: 20px;
 }
+
+/* Reset some default spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  position: absolute;       /* Keeps nav at the top of the page overlaying the hero image */
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 60px;       /* Adds breathing room around logo and links */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;              /* Ensures header stays above background image */
+}
+
+header nav {
+  display: flex;            /* Allows logo + menu to sit side by side */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+header nav img {
+  height: 30px;             /* Scales down the logo to fit neatly */
+}
+
+header nav ul {
+  display: flex;            /* Places links in one row */
+  list-style: none;         /* Removes bullet points */
+  gap: 40px;                /* Creates spacing between the links */
+}
+
+header nav ul li a {
+  text-decoration: none;    /* Removes underlines */
+  color: white;             /* Matches screenshot white text */
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 600;         /* Slightly bold like the screenshot */
+  letter-spacing: 1px;      /* Adds a touch of spacing for elegance */
+  transition: color 0.3s;   /* Smooth hover effect */
+}
+
+header nav ul li a:hover {
+  color: #a68df8;           /* Purple hover effect for a modern feel */
+}
+
+.hero_banner {
+  height: 100vh;                        /* Take full viewport height */
+  background: url("images/background.jpg") no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 140px;
+  font-weight: 900;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+.hero span {
+  display: inline-block;
+  margin: 0 20px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.hero button {
+  display: block;
+  margin: 30px auto 0 auto;             /* Center button under text */
+  padding: 15px 40px;
+  border: none;
+  border-radius: 25px;
+  background: #a259ff;                  /* Purple call-to-action */
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.hero button:hover {
+  background: #7a3bcc;
+}
+
+.profiles {
+  display: flex;
+  justify-content: center;    /* center the whole row */
+  align-items: flex-start;
+  gap: 50px;                  /* spacing between each profile */
+  margin-top: 20px;           /* push down below "Learn from the pros" */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;          /* crop instead of stretching */
+  border-radius: 50%;         /* makes perfect circle */
+  margin-bottom: 15px;
+}
+
+.profile h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.profile p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #ccc;                /* softer gray for descriptions */
+  line-height: 1.4;
+}
+
+.pros {
+  margin-top: 20px;          /* space above the heading */
+  margin-bottom: 20px;       /* space before profiles */
+  text-align: center;
+}
+
+.pros h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: white;              /* default white */
+}
+
+.pros h2 span {
+  color: #a259ff;            /* purple highlight */
+}
+
