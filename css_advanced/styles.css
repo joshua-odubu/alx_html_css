@@ -403,3 +403,45 @@ h4 {
   transform: scale(1.05);
   opacity: 0.9;
 }
+
+.faq {
+  padding: 100px 60px;
+  background: #fff;          /* white background */
+  color: #2c2c2c;            /* dark gray text */
+  text-align: center;
+}
+
+/* Section title */
+.faq h2 {
+  font-size: 2.5rem;
+  font-weight: 300;          /* lighter weight like in screenshot */
+  margin-bottom: 60px;
+  letter-spacing: 2px;       /* spacing between letters */
+  color: #1a1a1a;            /* almost black */
+}
+
+/* Grid layout for Q&A */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* exactly two columns */
+  gap: 100px 250px;      /* more breathing room */
+  max-width: 1200px;    /* keeps section from stretching too wide */
+  margin: 0 auto;
+  text-align: left;     /* make Q&A left-aligned */          /* center grid */
+}
+
+/* Each Q&A card */
+.faq-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;     /* bold */
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.faq-card p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #6c757d;       /* muted gray */
+  margin: 0;
+  max-width: 95%;       /* match narrow paragraph width */
+}
