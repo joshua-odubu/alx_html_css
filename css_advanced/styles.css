@@ -70,7 +70,7 @@ header nav ul li a:hover {
 }
 
 .hero_banner {
-  height: 100vh;                        /* Take full viewport height */
+  height: 80vh;                        /* Take full viewport height */
   background: url("images/background.jpg") no-repeat center center/cover;
   display: flex;
   flex-direction: column;
@@ -444,4 +444,57 @@ h4 {
   color: #6c757d;       /* muted gray */
   margin: 0;
   max-width: 95%;       /* match narrow paragraph width */
+}
+
+.footer {
+  background: #0d1b2a;        /* dark navy background */
+  color: white;
+  padding: 80px 80px 120px;
+  text-align: center;
+}
+
+/* Top section: logo left + icons right */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Left side: logo + brand text */
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-left img {
+  width: 200px;
+  height: auto;
+}
+
+/* Right side: social icons */
+.footer-right i {
+  font-size: 20px;
+  margin-left: 15px;
+  color: black;
+  background: white;
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.footer-right i:hover {
+  background: white;
+  color: #0d1b2a;
+}
+
+/* Copyright text */
+.footer-copy {
+  margin-top: 90px;
+  padding-bottom: 10px;
+  font-size: 0.85rem;
+  color: #aaa;
 }
