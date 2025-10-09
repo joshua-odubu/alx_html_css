@@ -417,3 +417,96 @@ button:active {
     font-size: 0.9rem;
   }
 }
+
+/* CONTACT SECTION */
+#contact {
+  background: #fff;
+  color: #000;
+  text-align: center;
+  padding: 100px 8%;
+}
+
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: var(--font-weight-bold);
+}
+
+/* Center form and keep it neat */
+#contact form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Labels */
+#contact label {
+  text-align: left;
+  font-weight: var(--font-weight-regular);
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* Inputs and textarea */
+#contact input,
+#contact textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  font-family: var(--font-main);
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  border-bottom: 1px solid var(--color-accent);
+}
+
+/* Button styling reused from your theme */
+#contact button {
+  width: fit-content;
+  align-self: center;
+  padding: 12px 30px;
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  border: none;
+  border-radius: var(--button-radius);
+  font-size: 0.9rem;
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+#contact button:hover {
+  opacity: 0.9;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  #contact {
+    padding: 80px 5%;
+  }
+
+  #contact form {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  #contact {
+    padding: 60px 5%;
+  }
+
+  #contact h2 {
+    font-size: 1.6rem;
+  }
+
+  #contact button {
+    padding: 10px 25px;
+  }
+}
