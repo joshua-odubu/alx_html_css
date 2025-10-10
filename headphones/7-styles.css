@@ -233,89 +233,9 @@ button:active {
   }
 }
 
-/* WHAT WE DO SECTION */
-
-#whatwedo {
-  background: #fff;
-  color: #1b1b1b;
-  text-align: center;
-  padding: 100px 8%;
-}
-
-#whatwedo h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-#whatwedo > p {
-  max-width: 800px;
-  margin: 0 auto 60px;
-  line-height: 1.7;
-  color: #2f2f2f;
-}
-
-.services {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.service {
-  flex: 1 1 200px;
-  min-width: 200px;
-  max-width: 250px;
-  margin: 0 auto;
-}
-
-.service .icon {
-  display: block;
-  font-size: 4rem;
-  color: var(--color-accent);
-  margin-bottom: 20px;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.service h3 {
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.service p {
-  color: #444;
-  line-height: 1.5;
-  font-size: 0.95rem;
-}
-
-/* Hover effect: slight lift + color accent */
-.service:hover .icon {
-  transform: translateY(-5px);
-  color: #ff4f4f;
-}
-
-/* RESPONSIVE DESIGN */
-
-@media (max-width: 768px) {
-  .services {
-    justify-content: center;
-    gap: 30px;
-  }
-}
-
-@media (max-width: 480px) {
-  .services {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .service {
-    max-width: 300px;
-  }
-}
-
-/* OUR RESULTS SECTION */
+/* ==============================================
+   OUR RESULTS SECTION (with animations)
+============================================== */
 
 #results {
   position: relative;
@@ -374,22 +294,84 @@ button:active {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+/* ==============================================
+   ✨ ANIMATIONS FOR "OUR RESULTS" SECTION
+============================================== */
+
+/* Keyframes for pulsing animation */
+@keyframes pulse-scale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Gentle pulse effect applied continuously */
+.pentagon {
+  animation: pulse-scale 3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* On hover, add a slight spin and larger pulse */
 .pentagon:hover {
-  transform: translateY(-8px);
+  animation: pulse-scale 1s ease-in-out infinite;
+  transform: rotate(-3deg) scale(1.1);
   opacity: 0.95;
 }
 
-.pentagon h3 {
-  font-size: 2rem;
-  margin-bottom: 5px;
-  font-weight: var(--font-weight-bold);
+/* Staggered animation delays for natural rhythm */
+.pentagon:nth-child(1) {
+  animation-delay: 0s;
+}
+.pentagon:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.pentagon:nth-child(3) {
+  animation-delay: 1s;
+}
+.pentagon:nth-child(4) {
+  animation-delay: 1.5s;
 }
 
-.pentagon p {
-  font-size: 0.7rem;
+/* ==============================================
+   ✨ OPTIONAL ANIMATIONS FOR "WHAT WE DO" SECTION
+   (shared styling enhancement)
+============================================== */
+
+/* Subtle bounce and rotate effect for service icons */
+@keyframes bounce-icon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
-/* Responsive Design */
+@keyframes rotate-scale {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(3deg) scale(1.05); }
+}
+
+/* Continuous bounce animation for icons */
+.service .icon {
+  animation: bounce-icon 3s ease-in-out infinite;
+}
+
+/* On hover, switch to rotation and accent color */
+.service:hover .icon {
+  animation: rotate-scale 0.8s ease-in-out infinite;
+  color: var(--color-accent);
+}
+
+/* Hover lift for whole card */
+.service:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+/* ==============================================
+   RESPONSIVE DESIGN
+============================================== */
+
 @media (max-width: 768px) {
   #results {
     padding: 100px 5%;
