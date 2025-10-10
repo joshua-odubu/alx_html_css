@@ -325,11 +325,12 @@ button:active {
   }
 }
 
-/* OUR RESULTS SECTION (NO IMAGE) */
+/* ======================================
+   OUR RESULTS SECTION (NO IMAGE, PURE CSS)
+====================================== */
 
 #results {
   position: relative;
-  /* Replaces image background with a clean gradient */
   background: radial-gradient(1200px 800px at 30% 20%, #112336 0%, #071629 60%, #071629 100%);
   color: var(--color-text);
   text-align: center;
@@ -341,7 +342,7 @@ button:active {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35); /* dark overlay for contrast */
+  background: rgba(0, 0, 0, 0.35);
   z-index: 1;
 }
 
@@ -364,7 +365,6 @@ button:active {
 }
 
 /* PENTAGON STATS */
-
 .stats {
   position: relative;
   z-index: 2;
@@ -375,42 +375,44 @@ button:active {
   flex-wrap: wrap;
 }
 
-/* Pure CSS Pentagon (no image, no clip-path) */
+/* Pentagon Base Shape */
 .pentagon {
-  --pentagon-size: 160px; /* base size variable */
+  --pentagon-size: 160px;
   position: relative;
   width: var(--pentagon-size);
-  height: calc(var(--pentagon-size) * 0.72);
+  height: calc(var(--pentagon-size) * 0.8);
   background: var(--color-accent);
-  margin: 0 auto;
+  margin: 40px auto 0;
+  clip-path: polygon(
+    50% 0%,
+    100% 38%,
+    82% 100%,
+    18% 100%,
+    0% 38%
+  );
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #fff;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
+  animation: floatUpDown 4s ease-in-out infinite;
 }
 
-/* Pentagon top triangle using ::before */
-.pentagon::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 100%;
-  width: 0;
-  height: 0;
-  border-left: calc(var(--pentagon-size) * 0.5) solid transparent;
-  border-right: calc(var(--pentagon-size) * 0.5) solid transparent;
-  border-bottom: calc(var(--pentagon-size) * 0.38) solid var(--color-accent);
+/* Float animation (subtle bobbing) */
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
+/* Hover interaction */
 .pentagon:hover {
-  transform: translateY(-8px);
+  transform: scale(1.1);
+  background: #ff8080;
   opacity: 0.95;
 }
 
-/* Text inside pentagon */
+/* Pentagon text */
 .pentagon h3 {
   font-size: 2rem;
   margin-bottom: 5px;
@@ -418,12 +420,13 @@ button:active {
 }
 
 .pentagon p {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   text-align: center;
+  color: #fff;
+  opacity: 0.9;
 }
 
 /* RESPONSIVE DESIGN */
-
 @media (max-width: 768px) {
   #results {
     padding: 100px 5%;
